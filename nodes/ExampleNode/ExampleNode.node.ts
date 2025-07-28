@@ -5,7 +5,7 @@ import type {
 	INodeTypeDescription,
 } from 'n8n-workflow';
 import { NodeConnectionType } from 'n8n-workflow';
-import { suggestRecipe } from './recipe-workflow';
+import { langfuseHandler, suggestRecipe } from './recipe-workflow';
 export class ExampleNode implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'AI Assistant',
@@ -42,6 +42,10 @@ export class ExampleNode implements INodeType {
 			json: result as unknown as INodeExecutionData,
 		};
 		this.logger.info('Step 4: Created result node: ' + JSON.stringify(nodeResult.json));
+
+		langfuseHandler.flushAsync().then(() => {
+			this.logger.info('Langfuse handler flushed successfully');
+		});
 
 		return [[nodeResult]];
 	}
