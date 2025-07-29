@@ -6,10 +6,10 @@ import type {
 } from 'n8n-workflow';
 import { NodeConnectionType } from 'n8n-workflow';
 import { langfuseHandler, suggestRecipe } from './recipe-workflow';
-export class ExampleNode implements INodeType {
+export class RecipeNode implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'AI Assistant',
-		name: 'exampleNode',
+		name: 'recipeNode',
 		group: ['transform'],
 		version: 1,
 		description: 'Basic Recipe Suggestor',
@@ -33,7 +33,7 @@ export class ExampleNode implements INodeType {
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const prompt = (await this.getExecuteData()).node.parameters.Prompt;
-		this.logger.info('Initializing ExampleNode ' + JSON.stringify(prompt));
+		this.logger.info('Initializing RecipeNode ' + JSON.stringify(prompt));
 		this.logger.info('Step 1: Executing model');
 
 		const result = await suggestRecipe(prompt!.toString(), this.logger);

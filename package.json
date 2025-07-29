@@ -33,7 +33,7 @@
 			"dist/credentials/HttpBinApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/ExampleNode/ExampleNode.node.js",
+			"dist/nodes/RecipeNode/RecipeNode.node.js",
 			"dist/nodes/HttpBin/HttpBin.node.js"
 		]
 	},

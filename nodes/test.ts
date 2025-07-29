@@ -1,4 +1,4 @@
-import { langfuseHandler, suggestRecipe } from './ExampleNode/recipe-workflow';
+import { langfuseHandler, suggestRecipe } from './RecipeNode/recipe-workflow';
 
 async function run() {
 	const suggestion = await suggestRecipe('What is a recipe for chocolate cake?', console);
