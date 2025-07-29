@@ -25,6 +25,15 @@
 		"credentials/**/*",
 		"nodes/**/*",
 		"nodes/**/*.json",
+		"workflows/**/*", 
+		"workflows/**/*.json",
 		"package.json",
+	],
+
+	"exclude": [
+		"dist",
+		"node_modules",
+		"**/*.spec.ts",
+		"**/*.test.ts"
 	],
 }

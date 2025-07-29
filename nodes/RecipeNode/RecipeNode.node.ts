@@ -5,10 +5,10 @@ import type {
 	INodeTypeDescription,
 } from 'n8n-workflow';
 import { NodeConnectionType } from 'n8n-workflow';
-import { langfuseHandler, suggestRecipe } from './recipe-workflow';
+import { langfuseHandler, suggestRecipe } from '../../workflows/recipe-workflow';
 export class RecipeNode implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'AI Assistant',
+		displayName: 'Recipe Node',
 		name: 'recipeNode',
 		group: ['transform'],
 		version: 1,
